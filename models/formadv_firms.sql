@@ -1,0 +1,1 @@
+SELECT firm_id, name AS "form_adv_firms", crd_no AS "crd_no_firm" FROM form_adv_formadvfirm
