@@ -44,17 +44,17 @@
 
 > **formd_funds**
 
-| firm\_id | fund\_d\_name | cik\_no\_fund |
-| :--- | :--- | :--- |
-| 94 | Nuveen Asset Management, LLC | 1521019 |
-| 94 | Nuveen Asset Management, LLC | 1521019 |
-| 94 | Nuveen Asset Management, LLC | 1521019 |
-| 19 | TAKUMI CAPITAL MANAGEMENT, LP | 1623458 |
-| 94 | Nuveen Asset Management, LLC | 1521019 |
-| 19 | TAKUMI CAPITAL MANAGEMENT, LP | 1623458 |
-| 19 | TAKUMI CAPITAL MANAGEMENT, LP | 1623458 |
-| 94 | Nuveen Asset Management, LLC | 1521019 |
-| 188 | Katonah Capital Partners LLC | 1673704 |
+| firm\_id | form\_d\_funds                      | cik\_no\_fund |
+| :--- |:--------------------------------| :--- |
+| 94 | Nuveen Asset Management, LLC    | 1521019 |
+| 94 | Nuveen Asset Management, LLC    | 1521019 |
+| 94 | Nuveen Asset Management, LLC    | 1521019 |
+| 19 | TAKUMI CAPITAL MANAGEMENT, LP   | 1623458 |
+| 94 | Nuveen Asset Management, LLC    | 1521019 |
+| 19 | TAKUMI CAPITAL MANAGEMENT, LP   | 1623458 |
+| 19 | TAKUMI CAPITAL MANAGEMENT, LP   | 1623458 |
+| 94 | Nuveen Asset Management, LLC    | 1521019 |
+| 188 | Katonah Capital Partners LLC    | 1673704 |
 | 279 | Winslow Capital Management, LLC | 900973 |
 
 
