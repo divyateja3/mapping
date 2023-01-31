@@ -1,11 +1,69 @@
 import pandas as pd
+from fuzzywuzzy import fuzz
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
 from ftfy import fix_text
 
 
+def get_fuzzy_matches_df(matches_df, dataframe_a, dataframe_b):
+    def _match_scores(data_a, data_b):
+
+        left_values = list(set(data_a.related_partners))
+        right_values = data_b.direct_owners.to_list()
+
+        match_df = []
+
+        for partner in left_values:
+            best_owner, best_raio = None, 0
+            for owner in right_values:
+                ratio = fuzz.SequenceMatcher(None, partner, owner).ratio()
+                if ratio > best_raio:
+                    best_owner = owner
+                    best_raio = ratio
+            match_df.append((partner, best_owner, best_raio))
+
+        return pd.DataFrame(match_df, columns=['related_partner', 'direct_owner', 'owners_ratio'])
+
+    matches_list = []
+
+    for idx, entry in matches_df.iterrows():
+        cik_no_fund, crd_no_firm, crd_no_fund = entry.cik_no_fund, entry.crd_no_firm, entry.crd_no_fund
+
+        table_a = dataframe_a[dataframe_a.cik_no_related_partners == cik_no_fund]
+        table_b, table_c = dataframe_b[dataframe_b.crd_no_owners == crd_no_firm], \
+            dataframe_b[dataframe_b.crd_no_owners == crd_no_fund]
+
+        match_a = _match_scores(table_a, table_b)
+        match_b = _match_scores(table_a, table_c)
+
+        matches = pd.concat([match_a, match_b], axis=1)
+        matches.columns = [
+            'related_partners', 'direct_owners_firm', 'owners_firm_ratio',
+            'drop', 'direct_owners_fund', 'owners_fund_ratio'
+        ]
+        matches.drop(columns=['drop'], axis=1, inplace=True)
+
+        matches['cik_no_fund'] = cik_no_fund
+        matches['crd_no_firm'] = crd_no_firm
+        matches['crd_no_fund'] = crd_no_fund
+
+        matches_list.append(matches)
+
+    matches = pd.DataFrame()
+
+    for data in matches_list:
+        if not data.empty:
+            if not matches.empty:
+                matches = pd.concat([matches, data], join='inner', ignore_index=True)
+            else:
+                matches = data
+
+    return matches
+
+
 def get_matches_df(dataframe_a, dataframe_b, **props):
+
     def _ngrams(string, n=2):
         string = str(string)
         string = fix_text(string)  # fix text

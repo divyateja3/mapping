@@ -1,5 +1,9 @@
 setuptools
 pandas
 numpy
+sqlalchemy
 scikit-learn
 ftfy
+psycopg2
+python-Levenshtein
+fuzzywuzzy
