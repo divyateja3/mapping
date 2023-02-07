@@ -28,6 +28,12 @@ class Connection:
         dataframe = pd.read_sql(text(query), self.connection)
 
         return dataframe
+    
+    def frame_to_sql(self, dataframe, table_name):
+        
+        dataframe.to_sql(table_name, self.connection, if_exists='replace', index=True)
+        
+        return True
 
     def close(self):
         self.connection.close()
