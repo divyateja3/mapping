@@ -1,4 +1,4 @@
-setuptools
+jupyter
 pandas
 numpy
 sqlalchemy
@@ -7,3 +7,4 @@ ftfy
 psycopg2
 python-Levenshtein
 fuzzywuzzy
+python-dotenv

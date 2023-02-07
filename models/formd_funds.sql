@@ -5,4 +5,4 @@ LEFT JOIN (
     ON firms_regulatoryfirm.firm_id = firms_firm.id
 ) firms_regulatoryfirm
 ON formd_firmformdvalue.regulatory_firm_id = firms_regulatoryfirm.id
-LIMIT 6000
+LIMIT 6000 OFFSET 6000
