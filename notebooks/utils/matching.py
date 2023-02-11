@@ -97,30 +97,11 @@ def get_merged_matches(matches_dataframe, dataframe_a, dataframe_b, **props):
 
     column_a, column_b = props.get('column_a'), props.get('column_b')
     map_a, map_b = props.get('map_a'), props.get('map_b')
-    map_from, map_to = props.get('map_from'), props.get('map_to')
 
-    cik_col = dataframe_a.columns[-1]
-    id_col = dataframe_a.columns[0]
-
-    cik_dict = pd.Series(dataframe_a[cik_col].values, index=dataframe_a[map_a]).to_dict()
-    id_dict = pd.Series(dataframe_a[id_col].values, index=dataframe_a[map_a]).to_dict()
-
-    cik_matches = [cik_dict[value] for value in matches_dataframe[column_a]]
-    id_matches = [id_dict[value] for value in matches_dataframe[column_a]]
-
-    matches_dataframe = pd.concat([matches_dataframe, pd.Series(cik_matches, name=f'cik_no_{map_from}')], axis=1)
-    matches_dataframe = pd.concat([matches_dataframe, pd.Series(id_matches, name=f'form_d_{map_from}_id')], axis=1)
-
-    crd_col = dataframe_b.columns[-1]
-    id_col = dataframe_b.columns[0]
-
-    crd_dict = pd.Series(dataframe_b[crd_col].values, index=dataframe_b[map_b]).to_dict()
-    id_dict = pd.Series(dataframe_b[id_col].values, index=dataframe_b[map_b]).to_dict()
-
-    crd_matches = [crd_dict[value] for value in matches_dataframe[column_b]]
-    id_matches = [id_dict[value] for value in matches_dataframe[column_b]]
-
-    matches_dataframe = pd.concat([matches_dataframe, pd.Series(crd_matches, name=f'crd_no_{map_to}')], axis=1)
-    matches_dataframe = pd.concat([matches_dataframe, pd.Series(id_matches, name=f'form_adv_{map_to}_id')], axis=1)
+    for dataframe, column, _map in [(dataframe_a, column_a, map_a), (dataframe_b, column_b, map_b)]:
+        for col in dataframe.columns:
+            col_dict = pd.Series(dataframe[col].values, index=dataframe[_map]).to_dict()
+            col_matches = [col_dict[value] for value in matches_dataframe[column]]
+            matches_dataframe = pd.concat([matches_dataframe, pd.Series(col_matches, name=f'{col}')], axis=1)
 
     return matches_dataframe
