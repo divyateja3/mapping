@@ -44,47 +44,30 @@
 
 > **formd_funds**
 
-| firm\_id | form\_d\_funds                  | cik\_no\_fund |
-|:---------|:--------------------------------|:--------------|
-| 94       | Nuveen Asset Management, LLC    | 1521019       |
-| 94       | Nuveen Asset Management, LLC    | 1521019       |
-| 94       | Nuveen Asset Management, LLC    | 1521019       |
-| 19       | TAKUMI CAPITAL MANAGEMENT, LP   | 1623458       |
-| 94       | Nuveen Asset Management, LLC    | 1521019       |
-| 19       | TAKUMI CAPITAL MANAGEMENT, LP   | 1623458       |
-| 19       | TAKUMI CAPITAL MANAGEMENT, LP   | 1623458       |
-| 94       | Nuveen Asset Management, LLC    | 1521019       |
-| 188      | Katonah Capital Partners LLC    | 1673704       |
-| 279      | Winslow Capital Management, LLC | 900973        |
-
-
-> **formadv_firms**
-
-| firm\_id | form\_adv\_firms                     | crd\_no\_firm |
-|:---------|:-------------------------------------|:--------------|
-| null     | PILOT CAPITAL HOLDINGS LLC           | 324831        |
-| null     | OXWATER CAPITAL MANAGEMENT           | 325009        |
-| null     | VECREST                              | 324807        |
-| null     | EMPACTFUL CAPITAL LLC                | 325002        |
-| null     | DEY ADVISORS, LLC                    | 324253        |
-| null     | PACIFIC GENERAL                      | 318577        |
-| null     | PEAKVIEW CAPITAL                     | 305663        |
-| null     | GREATER MIDWEST FINANCIAL GROUP, LLC | 324387        |
-| null     | GRAYHAWK WEALTH US INC.              | 321602        |
-| null     | KORZO FINANCIAL LLC                  | 323459        |
-
+| form\_d\_firm\_id | form\_d\_funds                  | cik\_no\_fund |
+|:------------------|:--------------------------------|:--------------|
+| 94                | Nuveen Asset Management, LLC    | 1521019       |
+| 94                | Nuveen Asset Management, LLC    | 1521019       |
+| 94                | Nuveen Asset Management, LLC    | 1521019       |
+| 19                | TAKUMI CAPITAL MANAGEMENT, LP   | 1623458       |
+| 94                | Nuveen Asset Management, LLC    | 1521019       |
+| 19                | TAKUMI CAPITAL MANAGEMENT, LP   | 1623458       |
+| 19                | TAKUMI CAPITAL MANAGEMENT, LP   | 1623458       |
+| 94                | Nuveen Asset Management, LLC    | 1521019       |
+| 188               | Katonah Capital Partners LLC    | 1673704       |
+| 279               | Winslow Capital Management, LLC | 900973        |
 
 > **formadv_funds**
 
-| firm\_id | form\_adv\_funds                                                        | crd\_no\_fund |
-|:---------|:------------------------------------------------------------------------|:--------------|
-| 7869     | GOLDMAN SACHS DEVELOPING MARKETS REAL ESTATE PARTNERS PMD QP FUND, L.P. | 361           |
-| 142304   | EAGLE GLOBAL LP                                                         | 150676        |
-| 982      | AGGIES, LLC                                                             | 104536        |
-| null     | VSAP TF AIV 2 LP                                                        | 297307        |
-| null     | EUROCREDIT III                                                          | 161919        |
-| 100551   | BRC PARTNERS OPPORTUNITY FUND, LP                                       | 308148        |
-| 5803     | EMANCIPATION CAPITAL, LP                                                | 127679        |
-| 141942   | CLAREANT MEZZANINE QPAM FUND LIMITED PARTNERSHIP                        | 128557        |
-| 9812     | DIRECT LENDING FUND III \(MASTER-L\) SLP                                | 122793        |
-| null     | ARCADIA NORTH NJ PRINCIPALS I LLC                                       | 161426        |
+| form\_adv\_firm\_id | form\_adv\_funds                                                        | crd\_no\_fund |
+|:--------------------|:------------------------------------------------------------------------|:--------------|
+| 7869                | GOLDMAN SACHS DEVELOPING MARKETS REAL ESTATE PARTNERS PMD QP FUND, L.P. | 361           |
+| 142304              | EAGLE GLOBAL LP                                                         | 150676        |
+| 982                 | AGGIES, LLC                                                             | 104536        |
+| null                | VSAP TF AIV 2 LP                                                        | 297307        |
+| null                | EUROCREDIT III                                                          | 161919        |
+| 100551              | BRC PARTNERS OPPORTUNITY FUND, LP                                       | 308148        |
+| 5803                | EMANCIPATION CAPITAL, LP                                                | 127679        |
+| 141942              | CLAREANT MEZZANINE QPAM FUND LIMITED PARTNERSHIP                        | 128557        |
+| 9812                | DIRECT LENDING FUND III \(MASTER-L\) SLP                                | 122793        |
+| null                | ARCADIA NORTH NJ PRINCIPALS I LLC                                       | 161426        |
