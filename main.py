@@ -3,7 +3,7 @@ from nbconvert.preprocessors import ExecutePreprocessor
 
 
 def main():
-    filename = 'notebooks/note.ipynb'
+    filename = './notebooks/note.ipynb'
     with open(filename) as file:
         nb_in = nbformat.read(file, nbformat.NO_CONVERT)
 
